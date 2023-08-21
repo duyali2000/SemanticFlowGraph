@@ -1,0 +1,8 @@
+public ReactiveHealthIndicatorRegistry createReactiveHealthIndicatorRegistry(
+			Map<String, ReactiveHealthIndicator> reactiveHealthIndicators,
+			Map<String, HealthIndicator> healthIndicators) {
+		Assert.notNull(reactiveHealthIndicators,
+				"ReactiveHealthIndicators must not be null");
+		return initialize(new DefaultReactiveHealthIndicatorRegistry(),
+				reactiveHealthIndicators, healthIndicators);
+	}

@@ -1,0 +1,6 @@
+public void addServletRegistrationBeans(
+			ServletRegistrationBean<?>... servletRegistrationBeans) {
+		Assert.notNull(servletRegistrationBeans,
+				"ServletRegistrationBeans must not be null");
+		Collections.addAll(this.servletRegistrationBeans, servletRegistrationBeans);
+	}

@@ -1,0 +1,4 @@
+We apply for Functional, Reusable, and Available Badges.
+We have make the packaged artifact (Installation Package, Dataset, Code, and Weights of Pre-trained Models) available so that the Evaluation Committee can access it. We have present the link to a public repository GitHub in the paper.
+Moreover, we have write and submit documentation explaining how to obtain the artifact package, how to unpack the artifact, how to get started, and how to use the artifacts in more detail with README.md, REQUIREMENTS.md, and INSTALL.md.
+Therefore, we believe that the artifact deserves that Functional, Reusable, and Available Badges.

@@ -1,0 +1,11 @@
+protected final void bindIndexed(ConfigurationPropertyName name, Bindable<?> target,
+			AggregateElementBinder elementBinder, ResolvableType aggregateType,
+			ResolvableType elementType, IndexedCollectionSupplier result) {
+		for (ConfigurationPropertySource source : getContext().getSources()) {
+			bindIndexed(source, name, target, elementBinder, result, aggregateType,
+					elementType);
+			if (result.wasSupplied() && result.get() != null) {
+				return;
+			}
+		}
+	}

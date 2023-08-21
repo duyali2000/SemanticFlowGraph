@@ -1,0 +1,12 @@
+public File getDir() {
+		if (this.dir == null) {
+			synchronized (this) {
+				byte[] hash = generateHash(this.sourceClass);
+				this.dir = new File(getTempDirectory(), toHexString(hash));
+				this.dir.mkdirs();
+				Assert.state(this.dir.exists(),
+						() -> "Unable to create temp directory " + this.dir);
+			}
+		}
+		return this.dir;
+	}

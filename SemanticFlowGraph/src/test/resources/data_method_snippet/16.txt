@@ -1,0 +1,12 @@
+public RandomAccessData parse(RandomAccessData data, boolean skipPrefixBytes)
+			throws IOException {
+		CentralDirectoryEndRecord endRecord = new CentralDirectoryEndRecord(data);
+		if (skipPrefixBytes) {
+			data = getArchiveData(endRecord, data);
+		}
+		RandomAccessData centralDirectoryData = endRecord.getCentralDirectory(data);
+		visitStart(endRecord, centralDirectoryData);
+		parseEntries(endRecord, centralDirectoryData);
+		visitEnd();
+		return data;
+	}

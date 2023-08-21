@@ -1,0 +1,3 @@
+public DependencyCustomizer add(String module, boolean transitive) {
+		return add(module, null, null, transitive);
+	}

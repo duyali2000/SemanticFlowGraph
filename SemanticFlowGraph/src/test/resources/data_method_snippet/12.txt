@@ -1,0 +1,6 @@
+public DependencyCustomizer add(String... modules) {
+		for (String module : modules) {
+			add(module, null, null, true);
+		}
+		return this;
+	}

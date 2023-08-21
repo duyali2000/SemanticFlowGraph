@@ -1,0 +1,17 @@
+public DependencyCustomizer ifAllMissingClasses(String... classNames) {
+		return new DependencyCustomizer(this) {
+			@Override
+			protected boolean canAdd() {
+				for (String className : classNames) {
+					try {
+						DependencyCustomizer.this.loader.loadClass(className);
+						return false;
+					}
+					catch (Exception ex) {
+						// swallow exception and continue
+					}
+				}
+				return DependencyCustomizer.this.canAdd();
+			}
+		};
+	}

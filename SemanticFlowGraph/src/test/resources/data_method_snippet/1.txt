@@ -1,0 +1,6 @@
+public void setServletRegistrationBeans(
+			Collection<? extends ServletRegistrationBean<?>> servletRegistrationBeans) {
+		Assert.notNull(servletRegistrationBeans,
+				"ServletRegistrationBeans must not be null");
+		this.servletRegistrationBeans = new LinkedHashSet<>(servletRegistrationBeans);
+	}

@@ -1,0 +1,19 @@
+public DependencyCustomizer ifAllResourcesPresent(String... paths) {
+		return new DependencyCustomizer(this) {
+			@Override
+			protected boolean canAdd() {
+				for (String path : paths) {
+					try {
+						if (DependencyCustomizer.this.loader.getResource(path) == null) {
+							return false;
+						}
+						return true;
+					}
+					catch (Exception ex) {
+						// swallow exception and continue
+					}
+				}
+				return DependencyCustomizer.this.canAdd();
+			}
+		};
+	}

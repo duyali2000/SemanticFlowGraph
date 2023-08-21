@@ -1,0 +1,27 @@
+@Override
+	protected void configure(FilterRegistration.Dynamic registration) {
+		super.configure(registration);
+		EnumSet<DispatcherType> dispatcherTypes = this.dispatcherTypes;
+		if (dispatcherTypes == null) {
+			dispatcherTypes = EnumSet.of(DispatcherType.REQUEST);
+		}
+		Set<String> servletNames = new LinkedHashSet<>();
+		for (ServletRegistrationBean<?> servletRegistrationBean : this.servletRegistrationBeans) {
+			servletNames.add(servletRegistrationBean.getServletName());
+		}
+		servletNames.addAll(this.servletNames);
+		if (servletNames.isEmpty() && this.urlPatterns.isEmpty()) {
+			registration.addMappingForUrlPatterns(dispatcherTypes, this.matchAfter,
+					DEFAULT_URL_MAPPINGS);
+		}
+		else {
+			if (!servletNames.isEmpty()) {
+				registration.addMappingForServletNames(dispatcherTypes, this.matchAfter,
+						StringUtils.toStringArray(servletNames));
+			}
+			if (!this.urlPatterns.isEmpty()) {
+				registration.addMappingForUrlPatterns(dispatcherTypes, this.matchAfter,
+						StringUtils.toStringArray(this.urlPatterns));
+			}
+		}
+	}

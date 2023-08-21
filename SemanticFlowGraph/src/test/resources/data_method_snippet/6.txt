@@ -1,0 +1,4 @@
+public void addUrlPatterns(String... urlPatterns) {
+		Assert.notNull(urlPatterns, "UrlPatterns must not be null");
+		Collections.addAll(this.urlPatterns, urlPatterns);
+	}

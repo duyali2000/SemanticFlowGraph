@@ -1,0 +1,3 @@
+public void setDispatcherTypes(DispatcherType first, DispatcherType... rest) {
+		this.dispatcherTypes = EnumSet.of(first, rest);
+	}

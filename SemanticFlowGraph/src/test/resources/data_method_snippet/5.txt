@@ -1,0 +1,4 @@
+public void setUrlPatterns(Collection<String> urlPatterns) {
+		Assert.notNull(urlPatterns, "UrlPatterns must not be null");
+		this.urlPatterns = new LinkedHashSet<>(urlPatterns);
+	}
