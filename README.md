@@ -8,8 +8,10 @@ This repository provides the code and guidance for reproducing the results in ou
   title={Pre-training Code Representation with Semantic Flow Graph for Effective Bug Localization},
   author={Du, Yali and Yu, Zhongxing},
   url = {https://arxiv.org/pdf/2308.12773.pdf},
-  booktitle={Proceedings of the 31th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering （ESEC/FSE 2023)},
-  year={2023}
+  booktitle={Proceedings of the 31th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering},
+  year={2023},
+  location = {San Fransisco, USA},
+  series = {ESEC/FSE 2023}
 }
 ```
 
