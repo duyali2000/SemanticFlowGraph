@@ -221,7 +221,7 @@ def load_tokenizer(config):
 
 
 def load_tokenizer_doc(config):
-    tok = AutoTokenizer.from_pretrained('/home/sdu/dyl/bug/graphcodebert')
+    tok = AutoTokenizer.from_pretrained('../SemanticCodeBERT')
     return tok
 
 def divide_hunk(hunk, context_tok='[UNUSED_1]', added_tok='[UNUSED_2]', removed_tok='[UNUSED_3]', nodesequence_tok='[UNUSED_4]', concate=True):
